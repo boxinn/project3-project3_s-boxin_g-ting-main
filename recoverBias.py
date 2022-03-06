@@ -18,13 +18,13 @@ def recoverBias(K,yTr,alphas,C):
     bias = 0
     
     # YOUR CODE HERE
-    d,n=np.shape(yTr)
+    d,n=np.shape(K)
     al=alphas
     for i in range(0,n):
-        if al[i]<1e-5 and al[i]>C:
+        if al[i]<1e-5 or al[i]>C:
             al[i]=0
 
-    a=n-np.count_nonzero(al)
+    a=np.count_nonzero(al)
 
 
     sum2=0
