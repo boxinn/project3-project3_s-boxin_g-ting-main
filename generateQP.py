@@ -21,10 +21,9 @@ def generateQP(K, yTr, C):
     # YOUR CODE HERE
     G=np.concatenate((np.positive(np.eye(n)),np.negative(np.eye(n))),axis=0)
     h=np.concatenate((np.ones([n,1])*C,np.zeros([n,1])),axis=0)
-    A=yTr
+    A=yTr.T
     b=np.zeros(1)
     p=-1*np.ones(n)
     Q=yTr*K*yTr.T
 
     return Q, p, G, h, A, b
-
