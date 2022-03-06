@@ -33,6 +33,7 @@ def recoverBias(K,yTr,alphas,C):
             for j in range(0,n):
                 sum1=al[i]*yTr[i]*K[i,j]
         sum2=sum2+yTr[i]-sum1
+
     bias = sum2/a
 
 
