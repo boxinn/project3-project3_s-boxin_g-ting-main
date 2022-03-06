@@ -41,7 +41,7 @@ def computeK(kernel_type, X, Z, kpar):
     if kernel_type=='poly':
         for i in range(0,n):
             for j in range(0,m):
-                K[i,j]=(X[:,i].T*Z[:,j]+1)**kpar
+                K[i,j]=np.power((X[:,i].T*Z[:,j]+1),kpar)
 
 
 
