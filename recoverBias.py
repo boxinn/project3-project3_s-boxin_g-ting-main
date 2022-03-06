@@ -26,12 +26,19 @@ def recoverBias(K,yTr,alphas,C):
 
     a=n-np.count_nonzero(al)
 
-    AL=(al>0).flatten
-    sum1=0
+
+    sum2=0
     for i in range(0,n):
-        sum2=yTr[i]-sum1
-        for j in range(0,n):
-            sum1=al[i]*yTr[i]*K[i,j]
+        if al[i]!=0:
+            for j in range(0,n):
+                sum1=al[i]*yTr[i]*K[i,j]
+        sum2=sum2+yTr[i]-sum1
+
+
+
+
+
+
 
     bias = sum2/a
 
