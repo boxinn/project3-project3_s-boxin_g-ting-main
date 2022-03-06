@@ -25,7 +25,7 @@ def l2distance(X,Z):
     # YOUR CODE HERE
     for i in range(0,n):
         for j in range(0,m):
-            D[i,j]=np.sum(np.power(X[:,i]-Z[:,j],2))
+            D[i,j]=np.sum(X[:,i]-Z[:,j])
 
 
 

@@ -35,7 +35,7 @@ def computeK(kernel_type, X, Z, kpar):
         D=l2distance(X,Z)
         for i in range (0,n):
             for j in range(0,m):
-                K[i,j]=np.exp(-kpar*D[i,j])
+                K[i,j]=np.exp(-kpar*(D[i,j]**2))
 
 
     if kernel_type=='poly':
