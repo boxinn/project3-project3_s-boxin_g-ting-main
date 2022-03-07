@@ -21,7 +21,7 @@ def recoverBias(K,yTr,alphas,C):
     d,n=np.shape(K)
     al=alphas
     for i in range(0,n):
-        if al[i]<1e-5 or al[i]>C:
+        if al[i]<0 or al[i]>C:
             al[i]=0
 
     a=np.count_nonzero(al)
@@ -31,10 +31,11 @@ def recoverBias(K,yTr,alphas,C):
     for i in range(0,n):
         if al[i]!=0:
             for j in range(0,n):
-                sum1=al[i]*yTr[i]*K[i,j]
+                sum1=al[j]*yTr[j]*K[i,j]
             sum2=sum2+yTr[i]-sum1
 
     bias = sum2/a
+
 
 
     
