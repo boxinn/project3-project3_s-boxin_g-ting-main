@@ -15,7 +15,7 @@ yTr = np.genfromtxt('yTr.csv', delimiter=',').reshape((xTr.shape[1], 1))
 
 # Train initial classifier
 C = 1
-P = 11
+P = 10
 svmclassify = trainsvm(xTr, yTr, C, 'rbf', P)
 
 # Get training error of initial classifier

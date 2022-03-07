@@ -19,25 +19,7 @@ def recoverBias(K,yTr,alphas,C):
     
     # YOUR CODE HERE
     d,n=np.shape(K)
-    al=alphas
-    for i in range(0,n):
-        if al[i]<0 or al[i]>C:
-            al[i]=0
-
-    a=np.count_nonzero(al)
-
-
-    sum2=0
-    for i in range(0,n):
-        if al[i]!=0:
-            for j in range(0,n):
-                sum1=al[j]*yTr[j]*K[i,j]
-            sum2=sum2+yTr[i]-sum1
-
-    bias = sum2/a
-
-
-
-    
-    return bias 
+    index=np.argmax(np.abs(alphas)+np.abs(C-alphas))
+    bias=1/yTr[index]-(alphas*yTr).T@K[:,index]
+    return bias
     
